@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Frati Minori Cappuccini — Cesena</title>
+<meta name="description" content="Convento dei Frati Minori Cappuccini di Cesena, Colle Garampa: orari delle messe e delle confessioni, accoglienza, percorsi per coppie e giovani, OFS, Amici di Padre Guglielmo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sabbia:#E8DCC4; --crema:#F3EDE0; --saio:#8A5A34; --saio-scuro:#6F4526;
+  --testo:#3A2413; --testo-2:#6B4A2E; --accento:#993C1D; --chiaro:#FBF6EC;
+  --linea:rgba(58,36,19,.14);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--crema);color:var(--testo);
+  font-family:"Poppins",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-weight:300;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+.wrap{max-width:960px;margin:0 auto;padding:0 22px}
+
+/* NAV */
+header{position:sticky;top:0;z-index:50;background:rgba(243,237,224,.94);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--linea)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:62px}
+.marchio{font-weight:500;font-size:15px;color:var(--testo);text-decoration:none;line-height:1.2}
+.marchio small{display:block;font-weight:300;font-size:11px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--accento)}
+.menu{display:none;gap:24px}
+.menu a{color:var(--testo-2);text-decoration:none;font-size:14px}
+.menu a:hover{color:var(--accento)}
+.burger{background:none;border:0;padding:8px;cursor:pointer;display:flex;flex-direction:column;gap:5px}
+.burger span{display:block;width:22px;height:2px;background:var(--testo);border-radius:2px}
+.pannello{display:none;border-top:1px solid var(--linea);padding:14px 0 22px}
+.pannello.aperto{display:block}
+.pannello a{display:block;padding:11px 0;color:var(--testo);text-decoration:none;
+  border-bottom:1px solid var(--linea);font-size:15px}
+@media(min-width:980px){.menu{display:flex}.burger{display:none}.pannello{display:none!important}}
+
+/* HERO */
+.hero{position:relative;min-height:74vh;display:flex;align-items:flex-end;
+  background:var(--saio-scuro);overflow:hidden}
+.hero .sfondo{position:absolute;inset:0}
+.hero .sfondo img{width:100%;height:100%;object-fit:cover;opacity:.55}
+.hero .velo{position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(58,36,19,.15) 0%,rgba(58,36,19,.82) 100%)}
+.hero .wrap{position:relative;padding-top:70px;padding-bottom:56px;color:var(--chiaro)}
+.hero h1{font-size:clamp(32px,7vw,58px);line-height:1.1;font-weight:500;margin:0 0 16px;max-width:15ch}
+.hero p{font-size:17px;color:rgba(251,246,236,.88);max-width:46ch;margin:0 0 28px}
+.occhiello{font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--accento);margin:0 0 18px;font-weight:500}
+.hero .occhiello{color:#E8B98C}
+.bottoni{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:13px 26px;border-radius:999px;text-decoration:none;
+  font-size:15px;font-weight:500}
+.btn-p{background:var(--saio);color:var(--chiaro)}
+.hero .btn-p{background:var(--chiaro);color:var(--saio-scuro)}
+.btn-s{background:transparent;color:var(--saio-scuro);border:1.5px solid var(--saio)}
+.hero .btn-s{color:var(--chiaro);border-color:rgba(251,246,236,.6)}
+
+/* SEZIONI */
+section{padding:62px 0;border-bottom:1px solid var(--linea)}
+section.alt{background:var(--sabbia)}
+h2{font-size:clamp(25px,5vw,36px);font-weight:500;line-height:1.2;margin:0 0 10px}
+.sottotitolo{color:var(--testo-2);margin:0 0 32px;max-width:56ch}
+h3{font-size:17px;font-weight:500;margin:0 0 8px}
+p{margin:0 0 14px}
+.etichetta{display:inline-block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--accento);font-weight:500;margin-bottom:14px}
+
+.griglia{display:grid;gap:16px;grid-template-columns:1fr}
+@media(min-width:700px){.griglia{grid-template-columns:1fr 1fr}}
+.scheda{background:var(--crema);border-radius:16px;padding:26px;border:1px solid var(--linea)}
+.riga{display:flex;justify-content:space-between;gap:14px;padding:10px 0;
+  border-bottom:1px solid var(--linea);font-size:15px}
+.riga:last-child{border-bottom:0}
+.riga span:last-child{font-weight:500;white-space:nowrap}
+.nota{font-size:14px;color:var(--testo-2);margin-top:18px;padding-left:16px;
+  border-left:2px solid var(--accento)}
+
+/* FOTO con segnaposto automatico */
+.ph{position:relative;background:var(--sabbia);border-radius:16px;overflow:hidden;
+  aspect-ratio:16/10;display:flex;align-items:center;justify-content:center}
+section.alt .ph{background:var(--crema)}
+.ph img{width:100%;height:100%;object-fit:cover;position:relative;z-index:2}
+.ph .dida{position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;padding:18px;
+  font-size:12.5px;color:var(--testo-2);border:1px dashed rgba(58,36,19,.3);border-radius:16px}
+.ph .dida b{display:block;font-weight:500;color:var(--accento);margin-top:6px;font-size:12px}
+.ph.alta{aspect-ratio:3/4}
+.ph.larga{aspect-ratio:21/9}
+
+.due{display:grid;gap:26px;grid-template-columns:1fr;align-items:center}
+@media(min-width:760px){.due{grid-template-columns:1fr 1fr;gap:40px}}
+.due.inverti > :first-child{order:2}
+@media(max-width:759px){.due.inverti > :first-child{order:0}}
+
+/* GALLERIA */
+.galleria{display:grid;gap:14px;grid-template-columns:repeat(2,1fr)}
+@media(min-width:760px){.galleria{grid-template-columns:repeat(3,1fr)}}
+.galleria .ph{aspect-ratio:1/1;border-radius:14px}
+.galleria .ph .dida{border-radius:14px;font-size:11.5px}
+
+/* calendario */
+.cal{margin:0;padding:0;list-style:none}
+.cal li{display:flex;gap:16px;padding:11px 0;border-bottom:1px solid var(--linea);font-size:15px}
+.cal li:last-child{border-bottom:0}
+.cal .data{min-width:104px;color:var(--accento);font-weight:500;font-size:14px}
+details{margin-top:18px}
+summary{cursor:pointer;color:var(--accento);font-size:15px;font-weight:500;padding:8px 0}
+.cit{font-size:clamp(19px,3.6vw,26px);line-height:1.4;font-weight:300;max-width:26ch;margin:0 0 22px}
+.cit b{font-weight:500;color:var(--accento)}
+
+.contatti{display:grid;gap:12px;grid-template-columns:1fr}
+@media(min-width:700px){.contatti{grid-template-columns:1fr 1fr}}
+.contatto{background:var(--crema);border:1px solid var(--linea);border-radius:14px;
+  padding:18px 20px;text-decoration:none;color:var(--testo);display:block}
+.contatto b{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--accento);font-weight:500;margin-bottom:4px}
+.contatto span{font-size:15px;font-weight:400}
+
+footer{background:var(--saio);color:var(--chiaro);padding:44px 0 36px;font-size:14px}
+footer a{color:var(--chiaro)}
+footer .social{display:flex;gap:14px;margin:18px 0;flex-wrap:wrap}
+footer .social a{border:1px solid rgba(251,246,236,.4);border-radius:999px;
+  padding:8px 18px;text-decoration:none;font-size:14px}
+.min{opacity:.72;font-size:12.5px;margin-top:18px}
+.daconf{background:rgba(153,60,29,.1);border-radius:8px;padding:3px 9px;font-size:12px;
+  color:var(--accento);font-weight:500;white-space:nowrap}
+.tbd{color:var(--accento);font-size:14px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="nav">
+      <a class="marchio" href="#">Frati Minori Cappuccini<small>Cesena · Colle Garampa</small></a>
+      <nav class="menu">
+        <a href="#orari">Orari</a>
+        <a href="#convento">Convento</a>
+        <a href="#vita">La vita qui</a>
+        <a href="#coppie">Coppie</a>
+        <a href="#giovani">Giovani</a>
+        <a href="#realta">Realtà</a>
+        <a href="#contatti">Contatti</a>
+      </nav>
+      <button class="burger" aria-label="Menu" onclick="document.getElementById('p').classList.toggle('aperto')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="pannello" id="p">
+      <a href="#orari" onclick="chiudi()">Messe e confessioni</a>
+      <a href="#convento" onclick="chiudi()">Il convento e i frati</a>
+      <a href="#vita" onclick="chiudi()">La vita del convento</a>
+      <a href="#coppie" onclick="chiudi()">Essere Coppia</a>
+      <a href="#giovani" onclick="chiudi()">Proposte per i giovani</a>
+      <a href="#realta" onclick="chiudi()">OFS e Amici di Padre Guglielmo</a>
+      <a href="#contatti" onclick="chiudi()">Contatti</a>
+    </div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="sfondo"><img src="img/convento1.jpg" alt="Il convento dei Cappuccini sul Colle Garampa" onerror="this.style.display='none'"></div>
+  <div class="velo"></div>
+  <div class="wrap">
+    <p class="occhiello">Colle Garampa · Cesena</p>
+    <h1>La porta del convento è aperta.</h1>
+    <p>Una fraternità di frati cappuccini che vive a Cesena dal 1559. Messe, confessioni, ascolto, ospitalità e cammini per chi ha voglia di fermarsi.</p>
+    <div class="bottoni">
+      <a class="btn btn-p" href="#orari">Orari delle messe</a>
+      <a class="btn btn-s" href="#contatti">Come raggiungerci</a>
+    </div>
+  </div>
+</div>
+
+<!-- ORARI -->
+<section id="orari">
+  <div class="wrap">
+    <h2>Messe e confessioni</h2>
+    <p class="sottotitolo">Chiesa del convento, via Cappuccini 341, Cesena.</p>
+    <div class="griglia">
+      <div class="scheda">
+        <div class="etichetta">Sante Messe</div>
+        <div class="riga"><span>Da martedì a sabato</span><span>18.30</span></div>
+        <div class="riga"><span>Domenica mattina</span><span>10.00</span></div>
+        <div class="riga"><span>Domenica sera, inverno</span><span>18.30</span></div>
+        <div class="riga"><span>Domenica sera, estate</span><span>20.30</span></div>
+        <p class="nota">D'estate, quando il tempo lo permette, la messa si celebra in giardino, sotto gli alberi.</p>
+      </div>
+      <div class="scheda">
+        <div class="etichetta">Confessioni e ascolto</div>
+        <div class="riga"><span>Mattino</span><span class="daconf">da confermare</span></div>
+        <div class="riga"><span>Pomeriggio</span><span class="daconf">da confermare</span></div>
+        <p class="nota">I frati sono disponibili anche per un colloquio personale: basta suonare al convento o telefonare.</p>
+      </div>
+    </div>
+    <div style="margin-top:24px" class="due">
+      <div class="ph">
+        <img src="img/messa_in_giardino.jpg" alt="Messa celebrata in giardino d'estate" onerror="this.style.display='none'">
+        <div class="dida">messa in giardino<b>img/messa_in_giardino.jpg</b></div>
+      </div>
+      <div class="ph">
+        <img src="img/interno_chiesa.jpg" alt="Interno della chiesa del convento" onerror="this.style.display='none'">
+        <div class="dida">interno della chiesa<b>img/interno_chiesa.jpg</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONVENTO -->
+<section class="alt" id="convento">
+  <div class="wrap">
+    <h2>Il convento e i frati</h2>
+    <p class="sottotitolo">Sul Colle Garampa, sopra la città, dal 1559.</p>
+    <div class="due">
+      <div>
+        <p>I Cappuccini sono a Cesena da oltre quattro secoli e mezzo. Tornati sul Colle Garampa nel 1869, riacquistarono l'intero convento nel 1881 e da allora non se ne sono più andati: l'edificio conserva il tipico stile cappuccinesco, essenziale e povero.</p>
+        <p>Qui fu maestro dei novizi padre Guglielmo Gattiani, a cui nel 2003 è stato dedicato un monumento; la sua salma riposa nel porticato della chiesa.</p>
+        <p>Attorno al convento ci sono il giardino, l'anfiteatro, l'orto e la vigna: spazi che d'estate diventano il cuore della vita comune.</p>
+        <p class="tbd">[ I nomi dei frati della fraternità, con una riga ciascuno ]</p>
+      </div>
+      <div class="ph alta">
+        <img src="img/convento_disegno.png" alt="Disegno del chiostro del convento" onerror="this.style.display='none'">
+        <div class="dida">disegno del chiostro<b>img/convento_disegno.png</b></div>
+      </div>
+    </div>
+    <div class="due" style="margin-top:30px">
+      <div class="ph">
+        <img src="img/quadro_s_francesco_chiesa.jpg" alt="Pala di San Francesco nella chiesa" onerror="this.style.display='none'">
+        <div class="dida">pala di San Francesco<b>img/quadro_s_francesco_chiesa.jpg</b></div>
+      </div>
+      <div>
+        <h3>La chiesa</h3>
+        <p>Sopra l'altare, la grande tela di San Francesco che riceve le stimmate. Un luogo raccolto, che d'estate si apre al giardino e che accoglie anche incontri, conferenze e momenti di preghiera aperti alla città.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VITA DEL CONVENTO -->
+<section id="vita">
+  <div class="wrap">
+    <div class="etichetta">La vita qui</div>
+    <h2>Non solo preghiera</h2>
+    <p class="sottotitolo">Attorno alla fraternità gira una quantità sorprendente di cose: la vendemmia, la cucina, il teatro per i bambini, le conferenze sotto gli olivi, la processione della Madonna del Buon Consiglio. Chi passa dal convento le trova, e spesso ci resta.</p>
+    <div class="galleria">
+      <div class="ph"><img src="img/vigna_vendemmia.jpg" alt="Vendemmia nella vigna del convento" onerror="this.style.display='none'"><div class="dida">la vendemmia<b>vigna_vendemmia.jpg</b></div></div>
+      <div class="ph"><img src="img/conferenza_in_giardino.jpg" alt="Conferenza in giardino" onerror="this.style.display='none'"><div class="dida">conferenze in giardino<b>conferenza_in_giardino.jpg</b></div></div>
+      <div class="ph"><img src="img/spettacolo_bimbi_anfiteatro.jpg" alt="Spettacolo per bambini nell'anfiteatro" onerror="this.style.display='none'"><div class="dida">teatro nell'anfiteatro<b>spettacolo_bimbi_anfiteatro.jpg</b></div></div>
+      <div class="ph"><img src="img/processione_madonna_buon_consiglio.jpg" alt="Processione della Madonna del Buon Consiglio" onerror="this.style.display='none'"><div class="dida">Madonna del Buon Consiglio<b>processione_madonna_buon_consiglio.jpg</b></div></div>
+      <div class="ph"><img src="img/OFS_opera_cucina.jpg" alt="Volontari al lavoro in cucina" onerror="this.style.display='none'"><div class="dida">la cucina delle feste<b>OFS_opera_cucina.jpg</b></div></div>
+      <div class="ph"><img src="img/messa_in_giardino2.jpg" alt="Assemblea alla messa in giardino" onerror="this.style.display='none'"><div class="dida">messa sotto gli alberi<b>messa_in_giardino2.jpg</b></div></div>
+    </div>
+    <p class="nota" style="margin-top:24px">Tutti gli appuntamenti vengono pubblicati sui canali social, aggiornati di continuo.</p>
+  </div>
+</section>
+
+<!-- ECEF -->
+<section class="alt" id="coppie">
+  <div class="wrap">
+    <div class="etichetta">Percorso ECEF · anno 2026/2027 · 4º anno</div>
+    <h2>Essere Coppia sostenuti dall'Essere Fraternità</h2>
+    <p class="sottotitolo">Percorsi formativi francescani per fidanzati e giovani coppie di sposi. Non sostituiscono i cammini delle parrocchie e delle diocesi: offrono un sostegno in più, alla luce della spiritualità francescana.</p>
+
+    <div class="due" style="margin-bottom:30px">
+      <div class="scheda">
+        <div class="riga"><span>Quando</span><span>un martedì al mese</span></div>
+        <div class="riga"><span>Orario</span><span>20.45 – 22.45</span></div>
+        <div class="riga"><span>Dove</span><span>Convento dei Cappuccini</span></div>
+        <div class="riga"><span>Si parte</span><span>15 settembre 2026</span></div>
+        <div class="riga"><span>Presentazione</span><span>29 settembre 2026</span></div>
+      </div>
+      <div>
+        <p><b style="font-weight:500">Come si svolge un incontro.</b> Un breve momento di preghiera, l'introduzione al tema e le indicazioni per il lavoro a casa. Poi lo spazio di condivisione nella coppia, la condivisione e l'ascolto in gruppo con le coppie animatrici, e la preghiera finale.</p>
+        <p style="color:var(--accento);font-size:15px;font-weight:500">Si può iniziare in qualsiasi momento: l'itinerario ha un andamento ciclico.</p>
+      </div>
+    </div>
+
+    <h3>I temi dell'anno</h3>
+    <ul class="cal">
+      <li><span class="data">15 set 2026</span><span>Il passato e la famiglia d'origine di ciascuno</span></li>
+      <li><span class="data">13 ott 2026</span><span>Gli interessi comuni e i valori comuni</span></li>
+      <li><span class="data">10 nov 2026</span><span>Le amicizie e la fedeltà</span></li>
+      <li><span class="data">1 dic 2026</span><span>L'apertura alla vita e le responsabilità educative</span></li>
+      <li><span class="data">12 gen 2027</span><span>Una proposta francescana per le coppie</span></li>
+      <li><span class="data">9 feb 2027</span><span>L'impegno sociale e politico</span></li>
+      <li><span class="data">9 mar 2027</span><span>La capacità di litigare e di perdonarsi</span></li>
+      <li><span class="data">6 apr 2027</span><span>Il matrimonio sacramento</span></li>
+      <li><span class="data">4 mag 2027</span><span>La capacità di progettare assieme</span></li>
+      <li><span class="data">5–6 giu 2027</span><span>Fine settimana di vita fraterna: «Maschile/femminile, singolare/plurale»</span></li>
+    </ul>
+
+    <details>
+      <summary>Gli obiettivi del percorso</summary>
+      <ul style="color:var(--testo-2);font-size:15px;padding-left:20px">
+        <li>Consolidare le basi per la vita di coppia</li>
+        <li>Stimolare una comunicazione efficace</li>
+        <li>Facilitare la crescita umana, spirituale e relazionale</li>
+        <li>Sostenere il cammino di discernimento vocazionale e missionario</li>
+        <li>Conoscere la spiritualità francescana laicale e fare esperienza di fraternità</li>
+      </ul>
+    </details>
+    <details>
+      <summary>Il secondo anno, 2027/2028</summary>
+      <ul style="color:var(--testo-2);font-size:15px;padding-left:20px">
+        <li>La persona · Dio · La comunicazione</li>
+        <li>L'emotività, l'affettività e la sessualità</li>
+        <li>La considerazione reciproca, la fiducia e la creatività</li>
+        <li>Il lavoro, i beni materiali e l'economia familiare</li>
+        <li>L'essere propositivi e il modo di prendere le decisioni</li>
+        <li>Gli spazi e i tempi ricreativi e di festa</li>
+        <li>Fine settimana: «La spiritualità in cucina e dintorni»</li>
+      </ul>
+    </details>
+
+    <div class="bottoni" style="margin-top:28px">
+      <a class="btn btn-p" href="https://forms.gle/u2aGfKnCXPyj8r2C7" target="_blank" rel="noopener">Iscriviti al percorso</a>
+      <a class="btn btn-s" href="tel:+393357776590">Parlane con fr. Adriano</a>
+    </div>
+  </div>
+</section>
+
+<!-- GIOVANI -->
+<section id="giovani">
+  <div class="wrap">
+    <div class="etichetta">Per i giovani</div>
+    <h2>Due porte per entrare</h2>
+    <p class="sottotitolo">Una leggera, una impegnativa. Si può cominciare da quella che si preferisce.</p>
+
+    <div class="due" style="margin-bottom:40px">
+      <div>
+        <h3 style="font-size:21px">Bettola Cappuccina</h3>
+        <p style="color:var(--testo-2)">Apericena e comunità per ragazzi e ragazze dai 19 ai 28 anni. Una serata di cibo e bevande, giochi, dialogo e spirito francescano. Si mangia, si gioca, si parla.</p>
+        <div class="scheda" style="margin-top:16px">
+          <div class="riga"><span>Orario</span><span>19.45 – 22.45</span></div>
+          <div class="riga"><span>Dove</span><span>Convento dei Cappuccini</span></div>
+          <div class="riga"><span>Prossima data</span><span class="daconf">da confermare</span></div>
+        </div>
+        <p style="margin-top:14px;font-size:15px;color:var(--testo-2)">Info e adesioni: Arianna 366 176 0390 · Bernardo 340 888 4921</p>
+      </div>
+      <div class="ph alta">
+        <img src="img/giovani.jpg" alt="Giovani in cerchio nel giardino del convento" onerror="this.style.display='none'">
+        <div class="dida">giovani in cerchio<b>img/giovani.jpg</b></div>
+      </div>
+    </div>
+
+    <div class="due inverti">
+      <div class="ph alta">
+        <img src="img/convento_disegno.png" alt="La porta del convento" onerror="this.style.display='none'">
+        <div class="dida">la porta del convento<b>img/convento_disegno.png</b></div>
+      </div>
+      <div>
+        <h3 style="font-size:21px">Vieni e vedi · 18–35 anni</h3>
+        <p class="cit">A volte mi sento <b>scentrato</b>, e lento o quasi bloccato nelle scelte fondamentali della vita.</p>
+        <p>Francesco d'Assisi si era decentrato, liberandosi dall'invadenza del suo io per aprirsi a Dio, alla sua azione e alla sua chiamata: una vita in armonia con se stesso, con il Signore, con i fratelli e con tutte le creature.</p>
+        <p>A volte avvertiamo il desiderio, ma anche la paura, di scegliere. Francesco ha varcato con fede e coraggio la porta della decisione e si è messo in cammino.</p>
+        <p><b style="font-weight:500">Se busso alla porta del convento</b> è per chiedere un'esperienza che mi metta in cammino, che mi apra a un ascolto profondo di me stesso e del Signore, e mi porti a decidere.</p>
+        <p>La porta è aperta: si può condividere per un periodo la ferialità della vita francescano-cappuccina.</p>
+        <div class="bottoni" style="margin-top:18px">
+          <a class="btn btn-p" href="mailto:adriano.parenti@gmail.com">Scrivi a fr. Adriano</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REALTÀ -->
+<section class="alt" id="realta">
+  <div class="wrap">
+    <h2>Le realtà del convento</h2>
+    <p class="sottotitolo">Gruppi e cammini che vivono attorno alla fraternità.</p>
+
+    <div class="due" style="margin-bottom:36px">
+      <div>
+        <h3 style="font-size:21px">Ordine Francescano Secolare</h3>
+        <p style="color:var(--testo-2)">Laici che vivono il Vangelo secondo la forma di san Francesco, nella vita di ogni giorno. Gli incontri seguono un tema che accompagna l'anno: da un'idea di Gesù di Nazareth, per la regola di san Francesco d'Assisi, una proposta per il nostro tempo.</p>
+        <div class="scheda" style="margin-top:16px">
+          <div class="etichetta" style="margin-bottom:8px">Una giornata tipo</div>
+          <div class="riga"><span>Santa Messa</span><span>10.00</span></div>
+          <div class="riga"><span>Relazione</span><span>11.15</span></div>
+          <div class="riga"><span>Pranzo ad agape</span><span>13.00</span></div>
+          <div class="riga"><span>Condivisione</span><span>14.30</span></div>
+          <div class="riga"><span>Saluti</span><span>16.00</span></div>
+        </div>
+        <p style="margin-top:14px;font-size:15px;color:var(--testo-2)">Informazioni: Chiara 338 147 9300 · Claudio 388 391 4330</p>
+      </div>
+      <div class="ph alta">
+        <img src="img/OFS_esempio.jpg" alt="Locandina degli incontri OFS" onerror="this.style.display='none'">
+        <div class="dida">locandina incontri OFS<b>img/OFS_esempio.jpg</b></div>
+      </div>
+    </div>
+
+    <div class="griglia">
+      <div class="scheda">
+        <h3>Amici di Padre Guglielmo</h3>
+        <p style="font-size:15px;color:var(--testo-2)">Attorno alla figura di padre Guglielmo Gattiani, maestro dei novizi in questo convento, sepolto nel porticato della chiesa.</p>
+        <p class="tbd">[ testo e referente da inserire ]</p>
+      </div>
+      <div class="scheda">
+        <h3>Accoglienza e ospitalità</h3>
+        <p style="font-size:15px;color:var(--testo-2)">Il convento offre ospitalità a chi cerca un tempo di silenzio, di ritiro o di passaggio.</p>
+        <p class="tbd">[ a chi è rivolta, come si prenota ]</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATTI -->
+<section id="contatti">
+  <div class="wrap">
+    <h2>Dove siamo</h2>
+    <p class="sottotitolo">Convento dei Frati Minori Cappuccini — via Cappuccini 341, 47521 Cesena (FC)</p>
+    <div class="contatti">
+      <a class="contatto" href="tel:+39054722299"><b>Telefono convento</b><span>0547 22299</span></a>
+      <a class="contatto" href="mailto:conventocesena@gmail.com"><b>Email</b><span>conventocesena@gmail.com</span></a>
+      <a class="contatto" href="https://wa.me/393513322636"><b>WhatsApp convento</b><span>+39 351 332 2636</span></a>
+      <a class="contatto" href="https://wa.me/393466815052"><b>WhatsApp ospitalità</b><span>+39 346 681 5052 · fr. Michele</span></a>
+    </div>
+    <div class="ph larga" style="margin-top:24px">
+      <div class="dida">mappa interattiva<b>da inserire in fase di pubblicazione</b></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div style="font-weight:500;font-size:16px">Frati Minori Cappuccini — Cesena</div>
+    <div style="opacity:.8">via Cappuccini 341, 47521 Cesena (FC) · dal 1559 sul Colle Garampa</div>
+    <div class="social">
+      <a href="https://www.facebook.com/profile.php?id=100070042306546" target="_blank" rel="noopener">Facebook</a>
+      <a href="#" target="_blank" rel="noopener">Instagram</a>
+    </div>
+    <div class="min">Bozza di lavoro v2 · i testi in rosso, gli orari delle confessioni e la data della Bettola sono da confermare. Le foto compaiono caricandole nella cartella <b>img/</b> con i nomi indicati nei segnaposto.</div>
+  </div>
+</footer>
+
+<script>
+function chiudi(){document.getElementById('p').classList.remove('aperto')}
+</script>
+</body>
+</html>
